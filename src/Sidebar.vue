@@ -1,15 +1,16 @@
 <template>
   <body>
     <nav class="navbar">
-      <div class="m-2 text-3xl">
-        <router-link class="navbar-links" to="/">Nug Builder</router-link>
+      <div class="m-2 text-5xl">
+        <router-link class="m-10 navbar-links" to="/"
+          >Blaster Builder</router-link
+        >
       </div>
       <a href="#" class="toggle-button" @click="toggleBurger">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
       </a>
-      <!-- <pre>{{ classList }}</pre> -->
       <div class="classList">
         <ul>
           <li>
@@ -35,7 +36,7 @@
             <router-link class="navbar-links" to="/parts">Parts </router-link>
           </li>
           <li>
-            <router-link class="navbar-links" v-if="devmode" to="/sandbox">
+            <router-link class="navbar-links" v-if="false" to="/sandbox">
               Sandbox</router-link
             >
           </li>

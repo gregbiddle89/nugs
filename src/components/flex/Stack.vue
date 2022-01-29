@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="m-10">
     <slot></slot>
   </div>
 </template>
@@ -9,5 +9,6 @@ div {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 1ch;
 }
 </style>

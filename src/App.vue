@@ -1,16 +1,31 @@
 <template>
   <div>
+    <!-- Navbar/Sidebar -->
     <sidebar />
+
+    <!-- Routing -->
     <router-view v-slot="{ Component }">
       <transition name="route" mode="out-in">
         <component :is="Component"></component>
       </transition>
     </router-view>
+
     <Footer>
-      <Row>
-        <a href="#">Affiliates</a>
-        <a href="#">Help</a>
-      </Row>
+      <Stack>
+        <Row>
+          <label>Resources</label>
+          <a href="http://opticsplanet.com/">PewPew Tactical</a>
+          <a href="https://www.arbuildjunkie.com/">AR Build Junkie</a>
+        </Row>
+        <Row>
+          <label>My Favorites</label>
+          <a href="http://opticsplanet.com/">OpticsPlanet</a>
+        </Row>
+        <a href="#">FAQ</a>
+        <a href="https://github.com/mikepreston17">GitHub</a>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+      </Stack>
     </Footer>
   </div>
 </template>
@@ -32,13 +47,6 @@ select:focus,
 textarea:focus,
 button:focus {
   outline: none;
-}
-
-/* Todo: move to tailwind component */
-label {
-  padding: 1rem;
-  font-weight: 500;
-  color: #42b983;
 }
 
 /* Todo: move to tailwind component */

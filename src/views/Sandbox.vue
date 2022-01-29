@@ -138,7 +138,7 @@
       <i>{{ info }}</i>
     </label>
     <tailwind-card v-show="true" />
-    <footer>
+    <Footer>
       <label>
         result:
         <i>{{ info }}</i>
@@ -147,10 +147,9 @@
         <a :href="info.url" target="_blank">Api Call</a>
       </h3>
 
-        Powered by {{ info.db }} <br />
+      Powered by {{ info.db }} <br />
       Mode: {{ !devmode ? "Production" : "Dev" }}
-    
-    </footer>
+    </Footer>
   </div>
 
   <!-- <TriangleSVG class="bg-left-top" /> -->
@@ -160,12 +159,14 @@ import TailwindCard from "../components/examples/TailwindCard.vue";
 import { devmode } from "../helpers/generators";
 import Button from "../components/atoms/Button.vue";
 import useTable from "../components/useTable";
-import axios from 'axios'
+import axios from "axios";
+import Footer from "../components/molecules/Footer.vue";
 
 export default {
   components: {
     TailwindCard,
     Button,
+    Footer,
   },
   setup() {
     let { state } = useTable("Builds");
@@ -249,16 +250,13 @@ export default {
   mounted() {
     // let self = this;
     // let info = self.info;
-
     // devmode && console.log("import.meta.env :>> ", import.meta.env);
     // let uri = import.meta.env?.VITE_VERCEL_URI || "http://localhost:";
     // let port = import.meta.env.VITE_PORT;
-
     // const url = devmode
     //   ? `http://localhost:${"3001"}/api/nugs/1`
     //   : `${uri}${port}/api/nugs/1`;
     // info.url = url;
-
     // // update the render of info for dev only
     // if (devmode) {
     //   info.db = import.meta.env.VITE_VERCEL_USER;
@@ -266,9 +264,7 @@ export default {
     //   info.uri = uri;
     //   info.port = port;
     // }
-
     // info.devmode = devmode;
-
     // axios
     //   .get(url)
     //   .then((response) => {

@@ -1,45 +1,12 @@
 <template>
   <div class="home">
     <parallax
-      title="Ready to Build an AR? 😎"
+      title="Got a Dream Rifle?"
+      subtitle="Build your dream rig right! 😎"
       backgroundImage="https://picsum.photos/id/377/600/400"
       foregroundImage="https://laserwar.com/PromoPages/ar-15_ranger/images/body-ar15.png"
       description="Are you really into rifles? \nGreat!  Because we can help you.  \nYou choose a budget\n We suggest the parts.  \nGet a build in minutes!  \nSound good?\n\n"
     />
-
-    <!-- 
-
-    <Row class="h-screen">
-      <div
-        class="text-midnight shadow-3xl bg-gradient-to-r from-purple-700 via-purple-300 to-medium-purple"
-      >
-        We need more lemon pledge...
-      </div>
-
-      <div
-        class="w-auto text-midnight shadow-3xl bg-gradient-to-r from-arctic-500 via-ocean-300 to-pink-600"
-      >
-        We need more lemon pledge...
-      </div>
-    </Row>
-
-    <ul class="gentle-flex">
-      <button v-on:click="showRounds = !showRounds">
-        {{ !showRounds ? "[+] Rounds" : "[-] Rounds" }}
-      </button>
-
-      <button v-on:click="showBuilds = !showBuilds">
-        {{ !showBuilds ? "[+] Builds" : "[-] Builds" }}
-      </button>
-
-      <button v-show="false" v-on:click="showOrders = !showOrders">
-        {{ !showOrders ? "[+] Orders" : "[-] Orders" }}
-      </button>
-      <button v-on:click="showParts = !showParts">
-        {{ !showParts ? "[+] Parts" : "[-] Parts" }}
-      </button>
-    </ul>
--->
 
     <!-- Todo: Once the form is created for each of these pages, refactor both view and form -->
     <div id="orders-page" v-if="showOrders">

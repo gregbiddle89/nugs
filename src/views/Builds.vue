@@ -5,15 +5,15 @@
 
       <!-- -->
 
-      <Button @click="galleryToggled = !galleryToggled">{{
+      <Button @click="galleryOn = !galleryOn">{{
         !show ? "Add Builds" : "View Builds"
       }}</Button>
 
-      <BuildsGallery v-show="!galleryToggled" />
+      <BuildsGallery v-show="!galleryOn" />
 
       <!-- Slider bar -->
 
-      <Button @click="crud">DOOM</Button>
+      <Button @click="crud">Test Serverless Function</Button>
 
       <!-- Builder -->
 
@@ -30,6 +30,7 @@
             <label class="text-5xl">D.D. MS-KMR-13</label>
           </template>
           <template v-slot:default>
+            <img src="images[0].src" alt="lower" />
             <span>lorem ipsum shootsum hitsum</span>
           </template>
           <template v-slot:footer>
@@ -66,6 +67,7 @@
   </div>
 </template>
 <script>
+import Slider from '@vueform/slider'
 import Button from "../components/atoms/Button.vue";
 import BuildsGallery from "../components/builds/BuildsGallery.vue";
 import Card from "../components/molecules/Card.vue";
@@ -76,9 +78,25 @@ import axios from "axios";
 export default {
   data() {
     return {
-      galleryToggled: false,
-      builderToggled: true,
+      galleryOn: false,
+      builderOn: true,
 
+      // Slider
+      value: 20
+
+      // Sample images
+      images: [
+        {
+          src: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsilencerco.com%2Fwp-content%2Fuploads%2F2020%2F07%2Fsco15-techspecs-600x323.png&f=1&nofb=1"
+          alt: "lower"
+        },
+        {
+          src:"https://cdn2.bigcommerce.com/n-ww20x/b5uhp/products/449/images/1396/B-872__21042.1482950790.1280.1280.png?c=2"
+        , alt: 'barrel'
+        }
+      ]
+
+      //Builder's Checklist
       build: {
         parts: [],
         profile: { id: "12345", Name: "MP" },
@@ -137,9 +155,12 @@ export default {
     Stack,
     Card,
     Gradient,
+    Slider,
   },
 };
 </script>
+<style src="@vueform/slider/themes/default.css"></style>
+
 <style scoped>
 html,
 body {
